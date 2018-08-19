@@ -10,6 +10,6 @@ Not polished at all: phoneme samples and transitions between phonemes need work
 ## Building
 ```shell
 git clone https://github.com/sealj553/votrax-speak.git
-cd votrax-speak
+cd votrax-speak/phonemegen
 make
 ```
