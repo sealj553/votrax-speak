@@ -229,7 +229,7 @@ void play(string &phoneme){
     }
 }
 
-string getPhonemes(string &input){
+string getPhonemes(string &&input){
     const char *output = espeak_TextToPhonemes((const void**)&(input), espeakCHARS_UTF8, phoneme_mode);
     string out(output);
     free((void*)output);
@@ -267,8 +267,7 @@ int main(int argc, char **argv){
     //    parse(getPhonemes(input));
     //}
     for(int i = 1; i < argc; ++i){
-        string input = argv[i];
-        parse(getPhonemes(input));
+        parse(getPhonemes(argv[i]));
         sleep(50);
     }
     pa_simple_free(s);
