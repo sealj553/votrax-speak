@@ -126,6 +126,7 @@ void init(){
     ipa_to_votrax["ˈɒ"] = "AH2";
     //ipa_to_votrax["I"] = "I3";
     ipa_to_votrax["ˈɪ"]  = "I2";
+    ipa_to_votrax["ˌi"]  = "I3";
     ipa_to_votrax["I"]   = "I1";
     ipa_to_votrax["m"]   = "M";
     ipa_to_votrax["n"]   = "N";
@@ -155,6 +156,7 @@ void init(){
     ipa_to_votrax["p"]   = "P";
     ipa_to_votrax["ˈəʊ"] = "O";
     ipa_to_votrax["ˈɪ"]  = "I";
+    ipa_to_votrax["ɪ"]   = "I";
     ipa_to_votrax["ˈuː"] = "U";
     ipa_to_votrax["i"]   = "Y";
     ipa_to_votrax["t"]   = "T";
@@ -167,6 +169,7 @@ void init(){
     ipa_to_votrax["ɐ"]   = "UH2";
     //ipa_to_votrax["ˈʌ"]  = "UH1";
     ipa_to_votrax["ˈʌ"]  = "UH";
+    ipa_to_votrax["ʌ"]  = "UH";
     ipa_to_votrax["ɔː"]  = "O2";
     ipa_to_votrax["ˈɔː"] = "O1";
     //ipa_to_votrax["uː"] = "IU";
