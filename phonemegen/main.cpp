@@ -210,7 +210,7 @@ void init(){
 void play_sound(vector<char> buffer){
     int error;
     //WAV header is 44 bytes
-    //removing 256 because there's extra data or something?
+    //removing 256 at the end because there's extra data or something?
     if(pa_simple_write(s, &(buffer[44]), buffer.size() - 256, &error) < 0){
         cout << "pa_simple_write() failed: " << pa_strerror(error) << endl;
     }
@@ -221,7 +221,6 @@ void play_sound(vector<char> buffer){
 
 
 void play(string &phoneme){
-    //play_sound(
     string votrax = ipa_to_votrax[phoneme];
     cout << "playing " << phoneme << " aka " << votrax << endl;
     if(votrax != string("")){
@@ -244,19 +243,17 @@ void parse(string &&str){
 
     const string delimiter = "_";
     size_t pos;
-    string token;
-    while((pos = str.find(delimiter)) != string::npos || (pos = str.find(" ")) != string::npos){
-        token = str.substr(0, pos);
+    while((pos = str.find(delimiter)) != string::npos || 
+                (pos = str.find(" ")) != string::npos){
+        string token = str.substr(0, pos);
         phonemes.push_back(token);
         str.erase(0, pos + 1);
     }
     phonemes.push_back(str);
 
     for(string &s : phonemes){
-        //cout << s << endl;
         play(s);
     }
-    //sleep(20);
 }
 
 int main(int argc, char **argv){
@@ -269,7 +266,10 @@ int main(int argc, char **argv){
     //while(std::getline(cin, input)){
     //    parse(getPhonemes(input));
     //}
-    string input = argv[1];
-    parse(getPhonemes(input));
+    for(int i = 1; i < argc; ++i){
+        string input = argv[i];
+        parse(getPhonemes(input));
+        sleep(50);
+    }
     pa_simple_free(s);
 }
