@@ -3,7 +3,7 @@ Bad software emulation of the Votrax SC-01
 
 ## Dependencies
 * Uses [eSpeak](http://espeak.sourceforge.net/) to convert words into phonemes
-* Uses pulseaudio to play the samples
+* Uses [pulseaudio](https://www.freedesktop.org/wiki/Software/PulseAudio/) to play the samples
 
 ## Building
 ```shell
